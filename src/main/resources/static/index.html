@@ -1,0 +1,48 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8"></meta>
+    <title>Insert title here</title>
+    <script type="text/javascript">
+    <!--function login(){-->
+        <!--document.-->
+    <!--}-->
+    </script>
+</head>
+<body>
+<h1>Shiro测试</h1>
+<h2>操作区</h2>
+<div>
+    <a href="admin/getMessage" target="testFrame">admin信息页面</a>
+</div>
+<div>
+<a href="user/getMessage" target="testFrame">user信息页面</a>
+</div>
+<div>
+    <form id="loginForm" method="post" target="testFrame" action="login">
+        用户名：<input type="text" name="username"/>&nbsp;
+        密码：<input type="password" name="password"/>&nbsp;
+        <input type=submit name="submit1" value="登录">
+    </form>
+</div>
+<a href="logout" target="testFrame">注销</a>
+
+<h2>结果展示区</h2>
+<iframe id="testFrame" width="100%" height="50"></iframe>
+
+<h2>测试步骤</h2>
+<p>1、访问"admin信息页面"或"user信息页面"链接，提示未登录</p>
+<hr>
+<p>2.1、使用admin账号登录（密码adminPwd）,提示登录成功</p>
+<p>2.2、访问"admin信息页面"，可以获取有效内容</p>
+<p>2.3、访问"user信息页面"，提示无权限</p>
+<p>2.4、访问"注销"链接，提示注销成功</p>
+<p>2.5、再次访问"admin信息页面"或"user信息页面"链接，提示未登录</p>
+<hr>
+<p>3.1、使用user账号登录（密码userPwd）,提示登录成功</p>
+<p>3.2、访问"admin信息页面"，提示无权限</p>
+<p>3.3、访问"user信息页面"，可以获取有效内容</p>
+</body>
+</html>
+
