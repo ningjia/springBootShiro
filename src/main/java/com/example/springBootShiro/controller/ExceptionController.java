@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.RestControllerAdvice;
 
 
 /**
- * describe:
+ * describe:全局异常捕获
  *
  * @author xxx
  * @date 2018/08/19
@@ -22,7 +22,11 @@ public class ExceptionController {
         this.resultMap = resultMap;
     }
 
-    // 捕捉 CustomRealm 抛出的异常
+    /**
+     * 捕捉CustomRealm抛出的异常
+     * @param ex
+     * @return
+     */
     @ExceptionHandler(AccountException.class)
     public ResultMap handleShiroException(Exception ex) {
         return resultMap.fail().message(ex.getMessage());

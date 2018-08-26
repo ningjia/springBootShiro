@@ -25,6 +25,6 @@ public class GuestController {
 
     @RequestMapping(value = "/getMessage", method = RequestMethod.GET)
     public ResultMap submitLogin() {
-        return resultMap.success().message("您拥有获得该接口的信息的权限！");
+        return resultMap.success().message("您拥有游客的权限，可以获得该接口的信息！");
     }
 }

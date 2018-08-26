@@ -20,6 +20,6 @@ public class AdminController {
 
     @RequestMapping(value = "/getMessage", method = RequestMethod.GET)
     public ResultMap getMessage() {
-        return resultMap.success().message("您拥有管理员权限，可以获得该接口的信息！");
+        return resultMap.success().message("您拥有Admin权限，可以获得该接口的信息！");
     }
 }

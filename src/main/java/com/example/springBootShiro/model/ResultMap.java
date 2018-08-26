@@ -5,7 +5,7 @@ import org.springframework.stereotype.Component;
 import java.util.HashMap;
 
 /**
- * describe:
+ * describe:用于返回操作结果的Map
  *
  * @author xxx
  * @date 2018/08/16

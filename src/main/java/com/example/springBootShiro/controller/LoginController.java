@@ -23,16 +23,25 @@ public class LoginController {
     @Autowired
     private UserMapper userMapper;
 
+    /**
+     * 未登录
+     */
     @RequestMapping(value = "/notLogin", method = RequestMethod.GET)
     public ResultMap notLogin() {
         return resultMap.success().message("您尚未登陆！");
     }
 
+    /**
+     * 无权限
+     */
     @RequestMapping(value = "/notRole", method = RequestMethod.GET)
     public ResultMap notRole() {
         return resultMap.success().message("您没有权限！");
     }
 
+    /**
+     * 注销
+     */
     @RequestMapping(value = "/logout", method = RequestMethod.GET)
     public ResultMap logout() {
         Subject subject = SecurityUtils.getSubject();
@@ -42,26 +51,26 @@ public class LoginController {
     }
 
     /**
-     * 登陆
+     * 登录
      *
      * @param username 用户名
      * @param password 密码
      */
     @RequestMapping(value = "/login", method = RequestMethod.POST)
     public ResultMap login(String username, String password) {
-        // 从SecurityUtils里边创建一个 subject
+        // 从SecurityUtils里边创建一个subject
         Subject subject = SecurityUtils.getSubject();
-        // 在认证提交前准备 token（令牌）
+        // 在认证提交前准备token（令牌）
         UsernamePasswordToken token = new UsernamePasswordToken(username, password);
         // 执行认证登陆
         subject.login(token);
         //根据权限，指定返回数据
         String role = userMapper.getRole(username);
         if ("userRole".equals(role)) {
-            return resultMap.success().message("欢迎登陆");
+            return resultMap.success().message("欢迎登陆！您是user权限");
         }
         if ("adminRole".equals(role)) {
-            return resultMap.success().message("欢迎来到管理员页面");
+            return resultMap.success().message("欢迎登陆！您是admin权限");
         }
         return resultMap.fail().message("权限错误！");
     }

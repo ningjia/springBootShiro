@@ -3,11 +3,8 @@
 <html>
 <head>
     <meta charset="UTF-8"></meta>
-    <title>Insert title here</title>
+    <title>Shiro测试</title>
     <script type="text/javascript">
-    <!--function login(){-->
-        <!--document.-->
-    <!--}-->
     </script>
 </head>
 <body>
@@ -17,7 +14,10 @@
     <a href="admin/getMessage" target="testFrame">admin信息页面</a>
 </div>
 <div>
-<a href="user/getMessage" target="testFrame">user信息页面</a>
+    <a href="user/getMessage" target="testFrame">user信息页面</a>
+</div>
+<div>
+    <a href="guest/getMessage" target="testFrame">游客信息页面</a>
 </div>
 <div>
     <form id="loginForm" method="post" target="testFrame" action="login">
@@ -34,15 +34,17 @@
 <h2>测试步骤</h2>
 <p>1、访问"admin信息页面"或"user信息页面"链接，提示未登录</p>
 <hr>
-<p>2.1、使用admin账号登录（密码adminPwd）,提示登录成功</p>
-<p>2.2、访问"admin信息页面"，可以获取有效内容</p>
-<p>2.3、访问"user信息页面"，提示无权限</p>
-<p>2.4、访问"注销"链接，提示注销成功</p>
-<p>2.5、再次访问"admin信息页面"或"user信息页面"链接，提示未登录</p>
+<p>2、访问"游客信息页面"，可以获取有效内容</p>
 <hr>
-<p>3.1、使用user账号登录（密码userPwd）,提示登录成功</p>
-<p>3.2、访问"admin信息页面"，提示无权限</p>
-<p>3.3、访问"user信息页面"，可以获取有效内容</p>
+<p>3.1、使用admin账号登录（密码adminPwd）,提示登录成功</p>
+<p>3.2、访问"admin信息页面"，可以获取有效内容</p>
+<p>3.3、访问"user信息页面"，提示无权限</p>
+<p>3.4、访问"注销"链接，提示注销成功</p>
+<p>3.5、再次访问"admin信息页面"或"user信息页面"链接，提示未登录</p>
+<hr>
+<p>4.1、使用user账号登录（密码userPwd）,提示登录成功</p>
+<p>4.2、访问"admin信息页面"，提示无权限</p>
+<p>4.3、访问"user信息页面"，可以获取有效内容</p>
 </body>
 </html>
 
