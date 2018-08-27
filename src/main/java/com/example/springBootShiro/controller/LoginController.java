@@ -1,5 +1,6 @@
 package com.example.springBootShiro.controller;
 
+import com.example.springBootShiro.common.Constant;
 import com.example.springBootShiro.mapper.UserMapper;
 import com.example.springBootShiro.model.ResultMap;
 import org.apache.shiro.SecurityUtils;
@@ -66,10 +67,10 @@ public class LoginController {
         subject.login(token);
         //根据权限，指定返回数据
         String role = userMapper.getRole(username);
-        if ("userRole".equals(role)) {
+        if (Constant.LOGIN_ROLE_USER.equals(role)) {
             return resultMap.success().message("欢迎登陆！您是user权限");
         }
-        if ("adminRole".equals(role)) {
+        if (Constant.LOGIN_ROLE_ADMIN.equals(role)) {
             return resultMap.success().message("欢迎登陆！您是admin权限");
         }
         return resultMap.fail().message("权限错误！");

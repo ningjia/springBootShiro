@@ -54,6 +54,9 @@ http://127.0.0.1:8080/index.html
     perms, port, rest, roles, ssl 是第二组授权过滤器;
     要通过授权过滤器，就先要完成登陆认证操作（即先要完成认证才能前去寻找授权) 才能走第二组授权器;
 ```
+### 单元测试
+- 使用mockMVC编写Shiro的单元测试尚不成功，不执行Filter检查。
+- 官方的单元测试说明：http://shiro.apache.org/testing.html
 ## Refer
 - [教你 Shiro 整合 SpringBoot，避开各种坑](https://blog.csdn.net/weixin_38132621/article/details/80216056)
 - [SpringBoot整合Shiro_HelloWorld](https://blog.csdn.net/qq_37171353/article/details/78893282)
